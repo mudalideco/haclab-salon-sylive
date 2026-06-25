@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #B76E79;
+  --primary-light: #D4A5A5;
+  --primary-dark: #8E4A55;
+  --background: #FFF8F0;
+  --foreground: #2D1B14;
+  --muted: #F5EDE3;
+  --accent: #C9A96E;
+  --surface: #FFFFFF;
+  --border: #E8DDD4;
+  --secondary: #4A2C2A;
+  --secondary-light: #7A4C4A;
+  --radius: 0.75rem;
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-secondary: var(--secondary);
+  --color-secondary-light: var(--secondary-light);
+  --font-heading: "Playfair Display", serif;
+  --font-body: "DM Sans", sans-serif;
+  --radius: var(--radius);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--primary);
+  color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Smooth scroll (Lenis will override) */
+html.lenis {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* Hide scrollbar while Lenis is active */
+html.lenis body {
+  overflow-x: hidden;
+}
